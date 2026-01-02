@@ -116,10 +116,6 @@ Middleware:
 
 ---
 
-install express
-
-    npm install express
-
 run
 
-    node server.js
+    node src/server.js
