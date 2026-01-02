@@ -115,3 +115,11 @@ Middleware:
 - Belajar topik baru sebelum fondasi dipakai
 
 ---
+
+install express
+
+    npm install express
+
+run
+
+    node server.js
