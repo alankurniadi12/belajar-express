@@ -17,8 +17,9 @@ function authMiddleware(req, res, next) {
     try {
         const payload = jwt.verify(token, JWT_SECRET)
         console.log('authMiddleware -> payload', payload)
-        // kasi nilai (id, role) ini ke pada req.user, sehingga req.body ada nilai ini 
+        // menyimpan identitas pengguna untuk dipakai oleh middleware/route selanjutnya.
         req.user = { id: payload.userId, role: payload.role}
+        // meneruskan kontrol ke middleware atau route handler berikutnya; mereka sekarang bisa mengakses req.user yg sudah punya nilai.
         return next()
     } catch(err) {
         return next(new AppError('Invalid token', 401))
